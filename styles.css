@@ -1,0 +1,64 @@
+
+.note {
+    width: 400px;
+    height: 500px;
+    background-color: rgb(208, 175, 175);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.85);
+    overflow: hidden;
+    animation: revealNote 2s forwards; /* use the reveal  note animation */
+}
+
+@keyframes revealNote {
+    from {
+        height: 0;
+    }
+    to {
+        height: 500px;
+    }
+}
+
+.heart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.heart {
+    height: 60px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    width: 25px;
+    height: 40px;
+    background-color: rgb(180, 13, 13);
+    border-radius: 25px 25px 0 0;
+    position: absolute;
+}
+
+.heart::before {
+    top: -20px;
+    left: 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.heart::after {
+    top: -20px;
+    right: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+.heart:hover {
+    transform: scale(1.2);
+}
